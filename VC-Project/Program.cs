@@ -10,7 +10,11 @@ namespace Lab03_SystemIO
 
         public static void Main(string[] args)
         {
+            Console.WriteLine("---CHALLENGE 2---");
             GenerateStars();
+
+            Console.WriteLine("---CHALLENGE 3---");
+            PromptAverageNumbers();
         }
 
         /*  Challenge 1
@@ -42,12 +46,15 @@ namespace Lab03_SystemIO
         }
 
         /* Challenge 2
-        Create a method that asks the user to enter a number between 2-10. Then, prompt the user that number of
-        times for random numbers.
+        Create a method that asks the user to enter a number between 2-10. Then, prompt the user 
+        that number of times for random numbers.
 
-        After the user has inputted all of the numbers. Find the average of all the numbers inputted.
+        After the user has inputted all of the numbers. Find the average of all the numbers 
+        inputted.
 
-        Specs: 1. Do not let the user put in negative numbers 2. Confirm each input is a real number
+        Specs: 
+        1. Do not let the user put in negative numbers 
+        2. Confirm each input is a real number
 
         Example:
         Please enter a number between 2-10: 4
@@ -61,7 +68,35 @@ namespace Lab03_SystemIO
         Tests:
         Input different ranges of numbers and confirm averages
         Confirm input
-        All numbers are 0s*/
+        All numbers are 0s */
+
+        public static void PromptAverageNumbers()
+        {
+            Console.WriteLine("Please enter a number between 2-10:");
+
+            int arraySize = Convert.ToInt32(Console.ReadLine());
+            int[] numberArray = new int[arraySize];
+
+            for(int i = 0; i < arraySize; i++)
+            {
+                Console.Write($"{i + 1} of {arraySize} - Enter a number: ");
+                numberArray[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine($"The average of these {arraySize} numbers is: {AverageAllNumbers(numberArray)}");
+        }
+
+        public static int AverageAllNumbers(int[] numbers)
+        {
+            int sum = 0;
+
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                sum += numbers[i];
+            }
+
+            return sum / numbers.Length;
+        }
 
 
         /* Challenge 3
@@ -78,7 +113,7 @@ namespace Lab03_SystemIO
                ***
                 * 
 
-        Tests: No tests are required*/
+        Tests: No tests are required */
 
         public static void GenerateStars()
         {
@@ -87,14 +122,10 @@ namespace Lab03_SystemIO
             int middle = length / 2;
             int numStars = -1;
 
-            Console.WriteLine($"Length : {length}, Middle: {middle} \n");
-
             for (int i = 0; i < length; i++)
             {
                 if (i > middle) numStars-= 2;
                 else numStars += 2;
-
-                //Console.WriteLine($"Stars: {numStars}");
 
                 string output = "";
 
@@ -105,34 +136,39 @@ namespace Lab03_SystemIO
             }
         }
 
-            /* Challenge 4
-            Write a method that brings in an integer array and returns the number that appears the most 
-            times. If there are no duplicates, return the first number in the array. If more than one number show 
-            up the same amount of time, return the first found.
+        /* Challenge 4
+        Write a method that brings in an integer array and returns the number that appears the most 
+        times. If there are no duplicates, return the first number in the array. If more than one number 
+        show up the same amount of time, return the first found.
 
-             Example: Input: [1,1,2,2,3,3,3,1,1,5,5,6,7,8,2,1,1]
-             output: 1
-            Tests:
+        Example:    Input: [1,1,2,2,3,3,3,1,1,5,5,6,7,8,2,1,1]
+                    Output: 1
+        Tests:
+        Input different size arrays
+        All numbers in the array are the same value
+        No duplicates exist in the array
+        There multiple numbers that show up the same amount of times.*/
 
-            Input different size arrays
-            All numbers in the array are the same value
-            No duplicates exist in the array
-            There multiple numbers that show up the same amount of times.*/
+        /* Challenge 5
+        Write a method in that finds the maximum value in the array. The array is not sorted. You may not 
+        use .Sort()
 
-            /* Challenge 5
-            Write a method in that finds the maximum value in the array. The array is not sorted. You may not use .Sort()
+        Example:    input [5, 25, 99, 123, 78, 96, 555, 108, 4]
+                    return: 555
 
-            Example: input [5, 25, 99, 123, 78, 96, 555, 108, 4]
+        Tests: 
+        1. Negative numbers 
+        2. All values are the same */
 
-            return: 555
-            Tests: 1. Negative numbers 2. All values are the same*/
+        /* Challenge 6
+        Write a method that asks the user to input a word, and then saves that word into an external file 
+        named words.txt
 
-            /* Challenge 6
-            Write a method that asks the user to input a word, and then saves that word into an external file named words.txt
+        Hint: Have a file already saved in the root of your directory with a couple of words already 
+        present in the file.
 
-            Hint: Have a file already saved in the root of your directory with a couple of words already present in the file.
-
-            Stretch: 1. Tests are optional for this challenge*/
+        Stretch: 
+        1. Tests are optional for this challenge */
 
             /* Challenge 7
             Write a method that reads the file in from Challenge 6, and outputs the contents to the console.
