@@ -3476,11 +3476,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bjhab\\source\\repos\\Lab03-SystemIO\\Lab03-SystemIO.csproj",
+      "projectUniqueName": "C:\\Users\\bjhab\\codefellows\\401\\Lab03-SystemIO\\Lab03-SystemIO\\VC-Project\\Lab03-SystemIO.csproj",
       "projectName": "Lab03-SystemIO",
-      "projectPath": "C:\\Users\\bjhab\\source\\repos\\Lab03-SystemIO\\Lab03-SystemIO.csproj",
+      "projectPath": "C:\\Users\\bjhab\\codefellows\\401\\Lab03-SystemIO\\Lab03-SystemIO\\VC-Project\\Lab03-SystemIO.csproj",
       "packagesPath": "C:\\Users\\bjhab\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bjhab\\source\\repos\\Lab03-SystemIO\\obj\\",
+      "outputPath": "C:\\Users\\bjhab\\codefellows\\401\\Lab03-SystemIO\\Lab03-SystemIO\\VC-Project\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
