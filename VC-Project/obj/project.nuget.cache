@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OsUYdrGqeKOWWosXcYmM0oxze7Po1I9ocqGNBHE1vLn8Ej1KlGiWQQjfmY6U6oCdpr5ymsg/IWJTGPgTcL6N1w==",
+  "dgSpecHash": "3WH8XzCJF8H4LxOvc4aZIz9zsXuwQe6DZbsMLnZ0F6atofDVEOtwDgI3wtT8o02SsETlradPJqXAJBZTfpic5g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bjhab\\source\\repos\\Lab03-SystemIO\\Lab03-SystemIO.csproj",
+  "projectFilePath": "C:\\Users\\bjhab\\codefellows\\401\\Lab03-SystemIO\\Lab03-SystemIO\\VC-Project\\Lab03-SystemIO.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bjhab\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\bjhab\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
