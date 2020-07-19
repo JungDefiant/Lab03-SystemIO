@@ -10,11 +10,33 @@ namespace Lab03_SystemIO
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("---CHALLENGE 2---");
+            Console.WriteLine("---CHALLENGE 1---");
+            //PromptThreeNumbers();
+
+            Console.WriteLine("\n---CHALLENGE 2---");
             GenerateStars();
 
-            Console.WriteLine("---CHALLENGE 3---");
-            PromptAverageNumbers();
+            Console.WriteLine("\n---CHALLENGE 3---");
+            //PromptAverageNumbers();
+
+            Console.WriteLine("\n---CHALLENGE 4---");
+            int[] input = new int[]
+            {
+                1, 1, 2, 2, 3, 3, 3, 1, 1, 5, 5, 6, 7, 8, 2, 1, 1
+            };
+
+            Console.WriteLine($"In the array: { String.Join(" ", input) }");
+            Console.WriteLine($"The number that occurs most often is: { GetModeInArray(input) }");
+
+            Console.WriteLine("\n---CHALLENGE 5---");
+
+            Console.WriteLine("\n---CHALLENGE 6---");
+
+            Console.WriteLine("\n---CHALLENGE 7---");
+
+            Console.WriteLine("\n---CHALLENGE 8---");
+
+            Console.WriteLine("\n---CHALLENGE 9---");
         }
 
         /*  Challenge 1
@@ -35,14 +57,32 @@ namespace Lab03_SystemIO
 
         public static void PromptThreeNumbers()
         {
-
+            Console.Write("Please enter 3 numbers: ");
+            string input = Console.ReadLine();
+            Console.WriteLine("The product of these 3 numbers is: " +
+                $"{ MultiplyThreeNumbersFromString(input) }");
         }
 
         public static int MultiplyThreeNumbersFromString(string input)
         {
-            
-            
-            return 0;
+            string[] splitString = input.Split(" ");
+            int product = 1;
+
+            if (splitString.Length < 3) return 0;
+
+            for (int i = 0; i < splitString.Length; i++)
+            {
+                try
+                {
+                    product *= Int32.Parse(splitString[i]);
+                }
+                catch(FormatException)
+                {
+                    return 1;
+                }
+            }
+
+            return product;
         }
 
         /* Challenge 2
@@ -149,6 +189,31 @@ namespace Lab03_SystemIO
         No duplicates exist in the array
         There multiple numbers that show up the same amount of times.*/
 
+        static int GetModeInArray(int[] array)
+        {
+            Dictionary<int, int> count = new Dictionary<int, int>();
+            
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (count.ContainsKey(array[i])) count[array[i]]++;
+                else count.Add(array[i], 1);
+            }
+
+            int highestValue = 0;
+            int highestKey = 0;
+
+            foreach (var num in count)
+            {
+                if (num.Value > highestValue)
+                {
+                    highestValue = num.Value;
+                    highestKey = num.Key;
+                }
+            }
+
+            return highestKey;
+        }
+
         /* Challenge 5
         Write a method in that finds the maximum value in the array. The array is not sorted. You may not 
         use .Sort()
@@ -170,24 +235,23 @@ namespace Lab03_SystemIO
         Stretch: 
         1. Tests are optional for this challenge */
 
-            /* Challenge 7
-            Write a method that reads the file in from Challenge 6, and outputs the contents to the console.
+        /* Challenge 7
+        Write a method that reads the file in from Challenge 6, and outputs the contents to the console.
 
-            Stretch: 1. Tests are optional for this challenge*/
+        Stretch: 1. Tests are optional for this challenge*/
 
-            /* Challenge 8
-            Write a method that reads in the file from Challenge 6. Removes one of the words, and rewrites it 
-            back to the file.
+        /* Challenge 8
+        Write a method that reads in the file from Challenge 6. Removes one of the words, and rewrites it  back to the file.
 
-            Stretch: 1. Tests are optional for this challenge*/
+        Stretch: 1. Tests are optional for this challenge*/
 
-            /* Challenge 9
-            Write a method that asks the user to input a sentence and returns an array that with the word and 
-            the number of characters each word has:
+        /* Challenge 9
+        Write a method that asks the user to input a sentence and returns an array that with the word and the number of characters each word has:
 
-            Example: input: "This is a sentance about important things"
-            Output: ["this: 4","is: 2", "a: 1", "sentance: 8", "about: 5", "important: 9", "things: 6"]
-            Tests: 1. Input a sentance, and it returns the correct array 2. Inut a sentance and confirm it returns 
-            an array 3. Use different sentances with differnt symbols */
+        Example: input: "This is a sentance about important things"
+        Output: ["this: 4","is: 2", "a: 1", "sentance: 8", "about: 5", "important: 9", "things: 6"]
+        Tests: 1. Input a sentance, and it returns the correct array 
+        2. Inut a sentance and confirm it returns an array 
+        3. Use different sentances with differnt symbols */
     }
 }
